@@ -1,6 +1,6 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=d1e8ea767ce467149a74af42225b7f57&amp;type=3#MainMenuStyle" />
-    <engine:VisualElement name="Container" style="flex-grow: 1; background-image: none;">
+    <engine:VisualElement name="Container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/_Game/Sprites/MainMenu/MainMenuBG.png?fileID=2800000&amp;guid=09c048c9da3f80a49b05288952253865&amp;type=3#MainMenuBG&quot;);">
         <engine:Label text="MainMenu" name="Header" class="header" />
         <engine:VisualElement name="RootMenu" style="flex-grow: 1; visibility: visible; display: flex;">
             <engine:Button text="Start" name="StartGameButton" class="button" />
