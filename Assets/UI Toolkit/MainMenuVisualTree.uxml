@@ -1,18 +1,18 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=d1e8ea767ce467149a74af42225b7f57&amp;type=3#MainMenuStyle" />
     <engine:VisualElement name="Container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/_Game/Sprites/MainMenu/MainMenuBG.png?fileID=2800000&amp;guid=09c048c9da3f80a49b05288952253865&amp;type=3#MainMenuBG&quot;);">
-        <engine:Label text="MainMenu" name="Header" class="header" />
+        <engine:Label text="MainMenu" name="Header" class="header" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=1834b569d06d88748980f310b45fad50&amp;type=3#NotInter-Regular&quot;);" />
         <engine:VisualElement name="RootMenu" style="flex-grow: 1; visibility: visible; display: flex;">
-            <engine:Button text="Start" name="StartGameButton" class="button" />
-            <engine:Button text="Credit" name="CreditButton" class="button" />
-            <engine:Button text="Quit&#10;" name="QuitButton" class="button" />
+            <engine:Button text="Start" name="StartGameButton" class="button" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=1834b569d06d88748980f310b45fad50&amp;type=3#NotInter-Regular&quot;);" />
+            <engine:Button text="Credit" name="CreditButton" class="button" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=1834b569d06d88748980f310b45fad50&amp;type=3#NotInter-Regular&quot;);" />
+            <engine:Button text="Quit&#10;" name="QuitButton" class="button" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=1834b569d06d88748980f310b45fad50&amp;type=3#NotInter-Regular&quot;);" />
         </engine:VisualElement>
         <engine:VisualElement name="CreditMenu" style="flex-grow: 1; display: none;">
             <engine:Label text="Credit" name="CreditHeader" class="header2" />
             <engine:Label text="Carlos Zambrano" name="Carlos" class="header3" />
             <engine:Label text="Mercy Perutka" name="Mercy" class="header3" />
             <engine:Label text="Paul Saetae" name="Paul" class="header3" />
-            <engine:Button text="Back" name="CreditBackButton" class="button" />
+            <engine:Button text="Back" name="CreditBackButton" class="button" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=1834b569d06d88748980f310b45fad50&amp;type=3#NotInter-Regular&quot;);" />
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>
