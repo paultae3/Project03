@@ -27,7 +27,9 @@ public class UrbanEagleController : MonoBehaviour
 
         _verticalSpeed += -_gravity * Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space ))
+        if (_input == null) return;
+
+        if (_input.TouchHeld)
         {
             _verticalSpeed = 0;
             _verticalSpeed += _jump;
