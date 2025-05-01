@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class UrbanEagleController : MonoBehaviour
 {
-    private InputHandler _input;
 
     public GameObject _eagle;
 
@@ -27,9 +26,8 @@ public class UrbanEagleController : MonoBehaviour
 
         _verticalSpeed += -_gravity * Time.deltaTime;
 
-        if (_input == null) return;
 
-        if (_input.TouchHeld)
+        if (Input.GetMouseButton(0))
         {
             _verticalSpeed = 0;
             _verticalSpeed += _jump;

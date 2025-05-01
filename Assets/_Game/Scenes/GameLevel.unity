@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 85712570}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.44, z: -10}
+  m_LocalPosition: {x: 5.9, y: 11.5, z: -14.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -634,7 +634,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1060,9 +1060,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1065203321120459759, guid: 1ffd82555adeffe40b86354cdf67503a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3434724999015047339, guid: 1ffd82555adeffe40b86354cdf67503a, type: 3}
       propertyPath: m_Name
       value: TowerSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513543142323343167, guid: 1ffd82555adeffe40b86354cdf67503a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
