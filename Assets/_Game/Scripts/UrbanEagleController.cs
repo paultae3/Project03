@@ -26,8 +26,9 @@ public class UrbanEagleController : MonoBehaviour
 
         _verticalSpeed += -_gravity * Time.deltaTime;
 
+        
 
-        if (Input.GetMouseButton(0))
+        if (Input.touchCount>0)
         {
             _verticalSpeed = 0;
             _verticalSpeed += _jump;
