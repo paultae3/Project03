@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=d1e8ea767ce467149a74af42225b7f57&amp;type=3#MainMenuStyle" />
+    <engine:VisualElement style="flex-grow: 1;">
+        <engine:Button text="Pause" name="PauseButton" class="button" style="align-self: flex-start; margin-left: 50px;" />
+    </engine:VisualElement>
+</engine:UXML>

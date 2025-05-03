@@ -1,0 +1,59 @@
+.button:hover {
+    scale: 1.1 1.1;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    transition-duration: 0.35s;
+    background-color: rgb(40, 255, 0);
+}
+
+.header {
+    font-size: 120px;
+    color: rgb(255, 255, 255);
+    align-self: center;
+    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=1834b569d06d88748980f310b45fad50&type=3#NotInter-Regular");
+}
+
+.header2 {
+    font-size: 90px;
+    -unity-text-align: upper-center;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+.header3 {
+    color: rgb(255, 255, 255);
+    font-size: 70px;
+    -unity-text-align: upper-center;
+}
+
+.header3 {
+    color: rgb(255, 255, 255);
+    font-size: 70px;
+}
+
+.button {
+    font-size: 50px;
+    width: 250px;
+    height: 100px;
+    align-self: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: rgb(255, 149, 8);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-repeat: no-repeat no-repeat;
+    -unity-font-style: bold;
+    -unity-text-outline-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    background-size: 100% 100%;
+    background-position-y: center 0;
+    background-position-x: left 0;
+    -unity-slice-left: 0;
+    -unity-slice-right: 0;
+    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=1834b569d06d88748980f310b45fad50&type=3#NotInter-Regular");
+}
