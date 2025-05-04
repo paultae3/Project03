@@ -7,6 +7,7 @@ public class UrbanEagleController : MonoBehaviour
 {
 
     public GameObject _eagle;
+    public GameObject _obstaclePrefab;
 
     public float _gravity = 30;
 
@@ -14,10 +15,17 @@ public class UrbanEagleController : MonoBehaviour
 
     private float _verticalSpeed;
 
+    private float _obstacleSpawnCountdown;
+    public float _obstacleSpawnInterval = 2;
+    public float _obstacleSpeed = 5;
+    private GameObject obstacleHolder;
+    private int obstacleCount;
+
 
     void Start()
     {
-        
+        obstacleHolder = new GameObject("ObstacleHolder");
+        obstacleHolder.transform.parent = this.transform;
     }
 
    
@@ -32,9 +40,24 @@ public class UrbanEagleController : MonoBehaviour
         {
             _verticalSpeed = 0;
             _verticalSpeed += _jump;
+            Debug.Log("Touch");
         }
 
         _eagle.transform.position += Vector3.up * _verticalSpeed * Time.deltaTime;
 
+        _obstacleSpawnCountdown -= Time.deltaTime;
+
+        if (_obstacleSpawnCountdown <= 0)
+        {
+            _obstacleSpawnCountdown = _obstacleSpawnInterval;
+            GameObject building = Instantiate(_obstaclePrefab);
+            building.transform.parent = obstacleHolder.transform;
+            building.transform.name = (++obstacleCount).ToString();
+
+            building.transform.position += Vector3.right * 30;
+            building.transform.position += Vector3.up * Mathf.Lerp(4, 9, Random.value);
+        }
+
+        obstacleHolder.transform.position += Vector3.left * _obstacleSpeed * Time.deltaTime;
     }
 }
