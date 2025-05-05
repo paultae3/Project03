@@ -8,6 +8,8 @@ public class UrbanEagleController : MonoBehaviour
 
     public GameObject _eagle;
     public GameObject _obstaclePrefab;
+    public GameObject WingLeft;
+    public GameObject WingRight;
 
     public float _gravity = 30;
 
@@ -69,7 +71,12 @@ public class UrbanEagleController : MonoBehaviour
 
         float speedToRange = Mathf.InverseLerp(-5, 5, _verticalSpeed);
         float noseAngle = Mathf.Lerp(-10, 10, speedToRange);
-        _eagle.transform.rotation = Quaternion.Euler(Vector3.forward * noseAngle);
+        _eagle.transform.rotation = Quaternion.Euler(Vector3.forward * noseAngle) * Quaternion.Euler(Vector3.up *20);
+
+        float wingSpeed = (_verticalSpeed > 0) ? 30 : 5;
+        float angle = Mathf.Sin(Time.time * wingSpeed) * 45;
+        WingLeft.transform.localRotation = Quaternion.Euler(Vector3.left * angle);
+        WingRight.transform.localRotation = Quaternion.Euler(Vector3.right * angle);
     }
 
    private void OnTriggerEnter(Collider collider)

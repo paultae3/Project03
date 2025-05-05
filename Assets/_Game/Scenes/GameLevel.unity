@@ -264,6 +264,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3842782229059499952, guid: c3db3303aff04c146a00092f7396273a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842782229059499952, guid: c3db3303aff04c146a00092f7396273a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.136
+      objectReference: {fileID: 0}
     - target: {fileID: 3890612495277613206, guid: c3db3303aff04c146a00092f7396273a, type: 3}
       propertyPath: m_UseGravity
       value: 0
@@ -271,6 +279,22 @@ PrefabInstance:
     - target: {fileID: 3890612495277613206, guid: c3db3303aff04c146a00092f7396273a, type: 3}
       propertyPath: m_CollisionDetection
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108475182227243201, guid: c3db3303aff04c146a00092f7396273a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108475182227243201, guid: c3db3303aff04c146a00092f7396273a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.99955547
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108475182227243201, guid: c3db3303aff04c146a00092f7396273a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.029816624
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108475182227243201, guid: c3db3303aff04c146a00092f7396273a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 356.583
       objectReference: {fileID: 0}
     - target: {fileID: 6613474613356297500, guid: c3db3303aff04c146a00092f7396273a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -321,6 +345,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3db3303aff04c146a00092f7396273a, type: 3}
+--- !u!1 &647786043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5854143505827426645, guid: c3db3303aff04c146a00092f7396273a, type: 3}
+  m_PrefabInstance: {fileID: 647786042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &647786044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7357041702318456012, guid: c3db3303aff04c146a00092f7396273a, type: 3}
+  m_PrefabInstance: {fileID: 647786042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &890940198
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +598,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eagle: {fileID: 1308076931}
   _obstaclePrefab: {fileID: 3434724999015047339, guid: 1ffd82555adeffe40b86354cdf67503a, type: 3}
+  WingLeft: {fileID: 647786043}
+  WingRight: {fileID: 647786044}
   _gravity: 30
   _jump: 10
   _obstacleSpawnInterval: 2
