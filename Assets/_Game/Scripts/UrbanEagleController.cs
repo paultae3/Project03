@@ -24,8 +24,15 @@ public class UrbanEagleController : MonoBehaviour
 
     void Start()
     {
+        obstacleCount = 0;
+        Destroy(obstacleHolder);
         obstacleHolder = new GameObject("ObstacleHolder");
         obstacleHolder.transform.parent = this.transform;
+
+        _verticalSpeed = 0;
+        _eagle.transform.position = Vector3.up * 5;
+
+        _obstacleSpawnCountdown = 0;
     }
 
    
@@ -59,5 +66,15 @@ public class UrbanEagleController : MonoBehaviour
         }
 
         obstacleHolder.transform.position += Vector3.left * _obstacleSpeed * Time.deltaTime;
+
+        float speedToRange = Mathf.InverseLerp(-5, 5, _verticalSpeed);
+        float noseAngle = Mathf.Lerp(-10, 10, speedToRange);
+        _eagle.transform.rotation = Quaternion.Euler(Vector3.forward * noseAngle);
+    }
+
+   private void OnTriggerEnter(Collider collider)
+    {
+        Start();
+       Debug.Log("In");
     }
 }
