@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class UrbanEagleController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class UrbanEagleController : MonoBehaviour
     public GameObject _obstaclePrefab;
     public GameObject WingLeft;
     public GameObject WingRight;
+    public Text scoreCount;
 
     public float _gravity = 30;
 
@@ -22,10 +24,14 @@ public class UrbanEagleController : MonoBehaviour
     public float _obstacleSpeed = 5;
     private GameObject obstacleHolder;
     private int obstacleCount;
+    private int score;
 
 
     void Start()
     {
+        score = 0;
+        scoreCount.text = score.ToString();
+
         obstacleCount = 0;
         Destroy(obstacleHolder);
         obstacleHolder = new GameObject("ObstacleHolder");
@@ -77,6 +83,24 @@ public class UrbanEagleController : MonoBehaviour
         float angle = Mathf.Sin(Time.time * wingSpeed) * 45;
         WingLeft.transform.localRotation = Quaternion.Euler(Vector3.left * angle);
         WingRight.transform.localRotation = Quaternion.Euler(Vector3.right * angle);
+
+        foreach (Transform building in obstacleHolder.transform)
+        {
+            if (building.position.x < 0)
+            {
+                int buildingID = int.Parse(building.name);
+                if (buildingID > score)
+                {
+                    score = buildingID;
+                    scoreCount.text = score.ToString();
+                }
+            }
+
+            if (building.position.x < -30)
+            {
+                Destroy(building.gameObject);
+            }
+        }
     }
 
    private void OnTriggerEnter(Collider collider)
