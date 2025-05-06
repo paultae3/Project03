@@ -26,6 +26,8 @@ public class UrbanEagleController : MonoBehaviour
     private int obstacleCount;
     private int score;
 
+    [SerializeField] private AudioClip _song02;
+
 
     void Start()
     {
@@ -41,6 +43,8 @@ public class UrbanEagleController : MonoBehaviour
         _eagle.transform.position = Vector3.up * 5;
 
         _obstacleSpawnCountdown = 0;
+
+        MusicManager.Instance.Play(_song02, .1f);
     }
 
    
@@ -107,6 +111,13 @@ public class UrbanEagleController : MonoBehaviour
     {
         Start();
        Debug.Log("In");
+
+       MusicManager.Instance.Play(_song02, .1f);
+    }
+
+    public void stopMusic()
+    {
+        MusicManager.Instance.Stop(2);
     }
 
 }

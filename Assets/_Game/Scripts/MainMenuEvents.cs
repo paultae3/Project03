@@ -20,13 +20,17 @@ public class MainMenuEvent : MonoBehaviour
     private List<Button> _menuButton = new List<Button>();
 
     private AudioSource _audioSource;
+    [SerializeField] private AudioClip _song01;
+
 
     [SerializeField] private string _startLevelName;
 
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
-        
+
+        MusicManager.Instance.Play(_song01, .1f);
+
         _document = GetComponent<UIDocument>();
 
         _rootMenu = _document.rootVisualElement.Q("RootMenu");
@@ -78,6 +82,8 @@ public class MainMenuEvent : MonoBehaviour
     private void OnPlayGameClick(ClickEvent evt)
     {
         SceneManager.LoadScene(_startLevelName);
+
+        MusicManager.Instance.Stop(2);
     }
 
     private void OnAllButtonClick(ClickEvent evt)

@@ -6,11 +6,17 @@ public class PlayerCollider : MonoBehaviour
 
     public GameMenuController _gameMenuControllerScript;
 
+    private AudioSource _audioSource;
+
+
     public void Start()
     {
         _urbanEagleControllerScript = GameObject.Find("UrbanEagleController").GetComponent<UrbanEagleController>();
 
         _gameMenuControllerScript = GameObject.Find("GameMenu").GetComponent<GameMenuController>();
+
+        _audioSource = GetComponent<AudioSource>();
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -18,6 +24,9 @@ public class PlayerCollider : MonoBehaviour
         if (other.gameObject.tag == "environment")
         {
             _gameMenuControllerScript.Die();
+
+            _audioSource.Play();
+
         }
     }
 }

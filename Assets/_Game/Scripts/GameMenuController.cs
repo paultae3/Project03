@@ -76,6 +76,8 @@ public class GameMenuController : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         Debug.Log("Quit!");
 
+        _urbanEagleControllerScript.stopMusic();
+
         Time.timeScale = 1;
     }
 
@@ -83,6 +85,7 @@ public class GameMenuController : MonoBehaviour
     {
         _gameplayMenuVisualTree.style.display = DisplayStyle.Flex;
         _pauseMenuVisualTree.style.display = DisplayStyle.None;
+
 
         Time.timeScale = 1;
     }
@@ -93,6 +96,7 @@ public class GameMenuController : MonoBehaviour
         _gameplayMenuVisualTree.style.display = DisplayStyle.None;
         _dieMenuVisualTree.style.display = DisplayStyle.Flex;
 
+
         Time.timeScale = 0;
     }
 
@@ -102,6 +106,7 @@ public class GameMenuController : MonoBehaviour
         _pauseMenuVisualTree.style.display = DisplayStyle.None;
 
         _urbanEagleControllerScript.restart();
+
         Time.timeScale = 1;
     }
 
@@ -109,6 +114,8 @@ public class GameMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         Debug.Log("Quit!");
+
+        _urbanEagleControllerScript.stopMusic();
 
         Time.timeScale = 1;
     }

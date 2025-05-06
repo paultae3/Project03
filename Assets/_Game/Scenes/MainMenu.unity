@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437be6e3c4cf72141bc077c84e006ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _song01: {fileID: 8300000, guid: 7252d35cc0658e74d902ae71b85f9435, type: 3}
   _startLevelName: GameLevel
 --- !u!82 &1068313126
 AudioSource:
