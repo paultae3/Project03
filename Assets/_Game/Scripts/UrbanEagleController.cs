@@ -69,7 +69,7 @@ public class UrbanEagleController : MonoBehaviour
             building.transform.parent = obstacleHolder.transform;
             building.transform.name = (++obstacleCount).ToString();
 
-            building.transform.position += Vector3.right * 30;
+            building.transform.position += Vector3.right * 35;
             building.transform.position += Vector3.up * Mathf.Lerp(4, 9, Random.value);
         }
 
@@ -96,14 +96,14 @@ public class UrbanEagleController : MonoBehaviour
                 }
             }
 
-            if (building.position.x < -30)
+            if (building.position.x < -50)
             {
                 Destroy(building.gameObject);
             }
         }
     }
 
-   private void OnTriggerEnter(Collider collider)
+   public void restart()
     {
         Start();
        Debug.Log("In");
