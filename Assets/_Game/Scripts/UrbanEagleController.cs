@@ -69,7 +69,7 @@ public class UrbanEagleController : MonoBehaviour
             building.transform.parent = obstacleHolder.transform;
             building.transform.name = (++obstacleCount).ToString();
 
-            building.transform.position += Vector3.right * 35;
+            building.transform.position += Vector3.right * 40;
             building.transform.position += Vector3.up * Mathf.Lerp(4, 9, Random.value);
         }
 
