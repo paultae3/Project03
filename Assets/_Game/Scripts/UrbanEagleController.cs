@@ -80,7 +80,6 @@ public class UrbanEagleController : MonoBehaviour
         {
             _verticalSpeed = 0;
             _verticalSpeed += _jump;
-            Debug.Log("Touch");
         }
 
         _eagle.transform.position += Vector3.up * _verticalSpeed * Time.deltaTime;
@@ -183,11 +182,19 @@ public class UrbanEagleController : MonoBehaviour
     {
         foreach (Transform pickup in pickupHolder.transform)
         {
-                Destroy(pickup.gameObject);
-
+            Time.timeScale = .5f;
+            StartCoroutine(ReturnToNormalSpeed());
+            Destroy(pickup.gameObject);
+            Debug.Log("Grabbed");
             _pickupParticle.Play();
         }
 
+    }
+
+    private IEnumerator ReturnToNormalSpeed()
+    {
+        yield return new WaitForSeconds(3);
+        Time.timeScale = 1f;
     }
 
 }

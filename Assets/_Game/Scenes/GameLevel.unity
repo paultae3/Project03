@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8234b98a9f635b4d97e3ca5b569bab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _urbanEagleControllerScript: {fileID: 0}
+  _urbanEagleControllerScript: {fileID: 1332296125}
 --- !u!82 &890940202
 AudioSource:
   m_ObjectHideFlags: 0
@@ -777,8 +777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dcaadb2251be2c4caa91329cbf59a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _urbanEagleControllerScript: {fileID: 0}
-  _gameMenuControllerScript: {fileID: 0}
+  _urbanEagleControllerScript: {fileID: 1332296125}
+  _gameMenuControllerScript: {fileID: 890940201}
   _hurtSound: {fileID: 8300000, guid: 16da627ab14879e47a691feaf20d766b, type: 3}
   _pickupSound: {fileID: 8300000, guid: 85de3a0ce17ab504296cc4c40a489f47, type: 3}
 --- !u!82 &1308076940
@@ -973,6 +973,9 @@ MonoBehaviour:
   _pickupSpeed: 5
   _song02: {fileID: 8300000, guid: 615686b34dca9ee438f03914144fc902, type: 3}
   _pickupParticle: {fileID: 1294792625}
+  _upgradeDuration: 3
+  _artToDisable: {fileID: 8297701239828448662, guid: 9b6321087534fa149bcc1a58a0f91717, type: 3}
+  _colliderToDisable: {fileID: 4368715924782888250, guid: 9b6321087534fa149bcc1a58a0f91717, type: 3}
 --- !u!65 &1332296126
 BoxCollider:
   m_ObjectHideFlags: 0
