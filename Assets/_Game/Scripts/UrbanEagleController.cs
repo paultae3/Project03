@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class UrbanEagleController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class UrbanEagleController : MonoBehaviour
     public GameObject WingLeft;
     public GameObject WingRight;
     public Text scoreCount;
+    [SerializeField] TextMeshProUGUI highScoreText;
 
     public float _gravity = 30;
 
@@ -45,6 +47,7 @@ public class UrbanEagleController : MonoBehaviour
         _obstacleSpawnCountdown = 0;
 
         MusicManager.Instance.Play(_song02, .1f);
+        UpdateHighScoreText();
     }
 
    
@@ -97,6 +100,7 @@ public class UrbanEagleController : MonoBehaviour
                 {
                     score = buildingID;
                     scoreCount.text = score.ToString();
+                    CheckHighScore();
                 }
             }
 
@@ -106,6 +110,19 @@ public class UrbanEagleController : MonoBehaviour
             }
         }
     }
+
+    void CheckHighScore()
+    {
+        if(score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+        }
+    }
+
+    void UpdateHighScoreText()
+    {
+        highScoreText.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
+    }    
 
    public void restart()
     {
