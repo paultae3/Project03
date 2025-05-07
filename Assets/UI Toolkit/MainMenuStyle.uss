@@ -2,7 +2,7 @@
     scale: 1.1 1.1;
     -unity-background-image-tint-color: rgb(255, 255, 255);
     transition-duration: 0.35s;
-    background-color: rgb(40, 255, 0);
+    background-color: rgb(255, 27, 0);
 }
 
 .header {
@@ -10,7 +10,7 @@
     color: rgb(255, 255, 255);
     align-self: center;
     -unity-font-style: bold;
-    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=1834b569d06d88748980f310b45fad50&type=3#NotInter-Regular");
+    -unity-font-definition: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=1834b569d06d88748980f310b45fad50&type=3#NotInter-Regular');
 }
 
 .header2 {
@@ -56,5 +56,10 @@
     background-position-x: left 0;
     -unity-slice-left: 0;
     -unity-slice-right: 0;
-    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=1834b569d06d88748980f310b45fad50&type=3#NotInter-Regular");
+    -unity-font-definition: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=1834b569d06d88748980f310b45fad50&type=3#NotInter-Regular');
+    scale: 1 1.1;
+}
+
+.button:active {
+    background-color: rgb(255, 219, 204);
 }
