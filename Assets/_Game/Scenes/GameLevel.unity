@@ -973,9 +973,6 @@ MonoBehaviour:
   _pickupSpeed: 5
   _song02: {fileID: 8300000, guid: 615686b34dca9ee438f03914144fc902, type: 3}
   _pickupParticle: {fileID: 1294792625}
-  _upgradeDuration: 3
-  _artToDisable: {fileID: 8297701239828448662, guid: 9b6321087534fa149bcc1a58a0f91717, type: 3}
-  _colliderToDisable: {fileID: 4368715924782888250, guid: 9b6321087534fa149bcc1a58a0f91717, type: 3}
 --- !u!65 &1332296126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1602,7 +1599,7 @@ Transform:
   m_GameObject: {fileID: 1942389448}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.8, y: 6, z: 8.6}
+  m_LocalPosition: {x: -0.4, y: 6, z: 8.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
