@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerCollider : MonoBehaviour
@@ -8,6 +9,10 @@ public class PlayerCollider : MonoBehaviour
 
     private AudioSource _audioSource;
 
+    [SerializeField] private AudioClip _hurtSound;
+
+    [SerializeField] private AudioClip _pickupSound;
+
 
     public void Start()
     {
@@ -17,6 +22,7 @@ public class PlayerCollider : MonoBehaviour
 
         _audioSource = GetComponent<AudioSource>();
 
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -25,7 +31,15 @@ public class PlayerCollider : MonoBehaviour
         {
             _gameMenuControllerScript.Die();
 
-            _audioSource.Play();
+            _audioSource.PlayOneShot(_hurtSound);
+
+        }
+
+        if (other.gameObject.tag == "pickup")
+        {
+            _urbanEagleControllerScript.pickup();
+
+            _audioSource.PlayOneShot(_pickupSound);
 
         }
     }

@@ -29,6 +29,7 @@ public class MainMenuEvent : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
 
+
         MusicManager.Instance.Play(_song01, .1f);
 
         _document = GetComponent<UIDocument>();

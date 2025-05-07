@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UIElements;
 
 public class UrbanEagleController : MonoBehaviour
 {
 
     public GameObject _eagle;
     public GameObject _obstaclePrefab;
+    public GameObject _pickupPrefab;
     public GameObject WingLeft;
     public GameObject WingRight;
     public Text scoreCount;
@@ -22,13 +24,21 @@ public class UrbanEagleController : MonoBehaviour
     private float _verticalSpeed;
 
     private float _obstacleSpawnCountdown;
-    public float _obstacleSpawnInterval = 2;
+    public float _obstacleSpawnInterval = 20;
     public float _obstacleSpeed = 5;
     private GameObject obstacleHolder;
     private int obstacleCount;
     private int score;
 
+    private float _pickupSpawnCountdown;
+    public float _pickupSpawnInterval = 2;
+    public float _pickupSpeed = 5;
+    private GameObject pickupHolder;
+    private int pickupCount;
+
     [SerializeField] private AudioClip _song02;
+
+    [SerializeField] private ParticleSystem _pickupParticle;
 
 
     void Start()
@@ -41,13 +51,21 @@ public class UrbanEagleController : MonoBehaviour
         obstacleHolder = new GameObject("ObstacleHolder");
         obstacleHolder.transform.parent = this.transform;
 
+        pickupCount = 0;
+        Destroy(pickupHolder);
+        pickupHolder = new GameObject("PickupHolder");
+        pickupHolder.transform.parent = this.transform;
+
         _verticalSpeed = 0;
         _eagle.transform.position = Vector3.up * 5;
 
         _obstacleSpawnCountdown = 0;
 
+        _pickupSpawnCountdown = 0;
+
         MusicManager.Instance.Play(_song02, .1f);
         UpdateHighScoreText();
+
     }
 
    
@@ -69,6 +87,8 @@ public class UrbanEagleController : MonoBehaviour
 
         _obstacleSpawnCountdown -= Time.deltaTime;
 
+        _pickupSpawnCountdown -= Time.deltaTime;
+
         if (_obstacleSpawnCountdown <= 0)
         {
             _obstacleSpawnCountdown = _obstacleSpawnInterval;
@@ -81,6 +101,19 @@ public class UrbanEagleController : MonoBehaviour
         }
 
         obstacleHolder.transform.position += Vector3.left * _obstacleSpeed * Time.deltaTime;
+
+        if (_pickupSpawnCountdown <= 0)
+        {
+            _pickupSpawnCountdown = _pickupSpawnInterval;
+            GameObject pickup = Instantiate(_pickupPrefab);
+            pickup.transform.parent = pickupHolder.transform;
+            pickup.transform.name = (++pickupCount).ToString();
+
+            pickup.transform.position += Vector3.right * 70;
+            pickup.transform.position += Vector3.up * Mathf.Lerp(4, 9, Random.value);
+        }
+
+        pickupHolder.transform.position += Vector3.left * _pickupSpeed * Time.deltaTime;
 
         float speedToRange = Mathf.InverseLerp(-5, 5, _verticalSpeed);
         float noseAngle = Mathf.Lerp(-10, 10, speedToRange);
@@ -109,6 +142,15 @@ public class UrbanEagleController : MonoBehaviour
                 Destroy(building.gameObject);
             }
         }
+
+        foreach (Transform pickup in pickupHolder.transform)
+        {
+
+            if (pickup.position.x < -50)
+            {
+                Destroy(pickup.gameObject);
+            }
+        }
     }
 
     void CheckHighScore()
@@ -135,6 +177,17 @@ public class UrbanEagleController : MonoBehaviour
     public void stopMusic()
     {
         MusicManager.Instance.Stop(2);
+    }
+
+    public void pickup()
+    {
+        foreach (Transform pickup in pickupHolder.transform)
+        {
+                Destroy(pickup.gameObject);
+
+            _pickupParticle.Play();
+        }
+
     }
 
 }
