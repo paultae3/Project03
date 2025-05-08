@@ -28,7 +28,7 @@ public class UrbanEagleController : MonoBehaviour
     public float _obstacleSpeed = 5;
     private GameObject obstacleHolder;
     private int obstacleCount;
-    private int score;
+    public int score;
 
     private float _pickupSpawnCountdown;
     public float _pickupSpawnInterval = 2;

@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 1068313123}
   - component: {fileID: 1068313125}
   - component: {fileID: 1068313126}
+  - component: {fileID: 1068313127}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _song01: {fileID: 8300000, guid: 7252d35cc0658e74d902ae71b85f9435, type: 3}
   _startLevelName: GameLevel
+  getScore: {fileID: 1068313127}
 --- !u!82 &1068313126
 AudioSource:
   m_ObjectHideFlags: 0
@@ -420,6 +422,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1068313127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068313122}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dd979a79ef27e4eb8070d5b3f5dd6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eagle: {fileID: 0}
+  _obstaclePrefab: {fileID: 0}
+  _pickupPrefab: {fileID: 0}
+  WingLeft: {fileID: 0}
+  WingRight: {fileID: 0}
+  scoreCount: {fileID: 0}
+  highScoreText: {fileID: 0}
+  _gravity: 30
+  _jump: 10
+  _obstacleSpawnInterval: 20
+  _obstacleSpeed: 5
+  score: 0
+  _pickupSpawnInterval: 2
+  _pickupSpeed: 5
+  _song02: {fileID: 0}
+  _pickupParticle: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

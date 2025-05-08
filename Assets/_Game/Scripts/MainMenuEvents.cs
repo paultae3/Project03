@@ -35,6 +35,8 @@ public class MainMenuEvent : MonoBehaviour
 
     [SerializeField] private string _startLevelName;
 
+    [SerializeField] UrbanEagleController getScore;
+
     private void Awake()
     {
 
@@ -152,6 +154,7 @@ public class MainMenuEvent : MonoBehaviour
 
         _rootMenu.style.display = DisplayStyle.None;
         _highScoreMenu.style.display = DisplayStyle.Flex;
+        HighScoreDisplay();
     }
 
     private void OnHighScoreResetButtonClick(ClickEvent evt)
@@ -183,7 +186,8 @@ public class MainMenuEvent : MonoBehaviour
 
     public void HighScoreDisplay()
     {
-        _highScoreDisplay.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
+        _highScoreDisplay.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", getScore.score)}";
+
 
     }
     
