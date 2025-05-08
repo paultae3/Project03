@@ -152,7 +152,7 @@ public class UrbanEagleController : MonoBehaviour
         }
     }
 
-    void CheckHighScore()
+    public void CheckHighScore()
     {
         if(score > PlayerPrefs.GetInt("HighScore", 0))
         {
@@ -160,7 +160,7 @@ public class UrbanEagleController : MonoBehaviour
         }
     }
 
-    void UpdateHighScoreText()
+    public void UpdateHighScoreText()
     {
         highScoreText.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
     }    

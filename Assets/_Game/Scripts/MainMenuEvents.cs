@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using UnityEngine.UIElements;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
 public class MainMenuEvent : MonoBehaviour
 {
 
     private UIDocument _document;
 
+
     private VisualElement _rootMenu;
     private VisualElement _creditMenu;
+    private VisualElement _highScoreMenu;
+
+    private Label _highScoreDisplay;
 
     private Button _button;
     private Button _creditButton;
     private Button _creditBackButton;
     private Button _quitButton;
+
+    private Button _highScoreButton;
+    private Button _highScoreResetButton;
+    private Button _highScoreBackButton;
 
     private List<Button> _menuButton = new List<Button>();
 
@@ -27,6 +37,7 @@ public class MainMenuEvent : MonoBehaviour
 
     private void Awake()
     {
+
         _audioSource = GetComponent<AudioSource>();
 
 
@@ -36,6 +47,11 @@ public class MainMenuEvent : MonoBehaviour
 
         _rootMenu = _document.rootVisualElement.Q("RootMenu");
         _creditMenu = _document.rootVisualElement.Q("CreditMenu");
+        _highScoreMenu = _document.rootVisualElement.Q("HighScoreMenu");
+
+
+        _highScoreDisplay = _document.rootVisualElement.Q<Label>("HighScoreDisplay");
+
 
         _button = _document.rootVisualElement.Q("StartGameButton") as Button;
         
@@ -57,6 +73,22 @@ public class MainMenuEvent : MonoBehaviour
         _quitButton.RegisterCallback<ClickEvent>(OnQuitButtonClick);
 
 
+
+        _highScoreButton = _document.rootVisualElement.Q("HighScoreButton") as Button;
+
+        _highScoreButton.RegisterCallback<ClickEvent>(OnHighScoreButtonClick);
+
+
+        _highScoreResetButton = _document.rootVisualElement.Q("HighScoreResetButton") as Button;
+
+        _highScoreResetButton.RegisterCallback<ClickEvent>(OnHighScoreResetButtonClick);
+
+
+        _highScoreBackButton = _document.rootVisualElement.Q("HighScoreBackButton") as Button;
+
+        _highScoreBackButton.RegisterCallback<ClickEvent>(OnHighScoreBackButtonClick);
+
+
         _menuButton = _document.rootVisualElement.Query<Button>().ToList();
         for(int i = 0; i < _menuButton.Count; i++)
         {
@@ -74,7 +106,13 @@ public class MainMenuEvent : MonoBehaviour
 
         _button.UnregisterCallback<ClickEvent>(OnPlayGameClick);
 
-        for(int i = 0; i < _menuButton.Count; i++)
+        _highScoreButton.UnregisterCallback<ClickEvent>(OnHighScoreButtonClick);
+
+        _highScoreResetButton.UnregisterCallback<ClickEvent>(OnHighScoreResetButtonClick);
+
+        _highScoreBackButton.UnregisterCallback<ClickEvent>(OnHighScoreBackButtonClick);
+
+        for (int i = 0; i < _menuButton.Count; i++)
         {
             _menuButton[i].UnregisterCallback<ClickEvent>(OnAllButtonClick);
         }
@@ -108,6 +146,34 @@ public class MainMenuEvent : MonoBehaviour
         _creditMenu.style.display = DisplayStyle.None;
     }
 
+    private void OnHighScoreButtonClick(ClickEvent evt)
+    {
+        
+
+        _rootMenu.style.display = DisplayStyle.None;
+        _highScoreMenu.style.display = DisplayStyle.Flex;
+    }
+
+    private void OnHighScoreResetButtonClick(ClickEvent evt)
+    {
+      
+
+        _rootMenu.style.display = DisplayStyle.None;
+        _highScoreMenu.style.display = DisplayStyle.Flex;
+    }
+
+
+    private void OnHighScoreBackButtonClick(ClickEvent evt)
+    {
+        
+
+        _rootMenu.style.display = DisplayStyle.Flex;
+        _highScoreMenu.style.display = DisplayStyle.None;
+    }
+
+
+
+
     private void OnQuitButtonClick(ClickEvent evt)
     {
         Debug.Log("Quit Button Click");
@@ -115,4 +181,10 @@ public class MainMenuEvent : MonoBehaviour
         Application.Quit();
     }
 
+    public void HighScoreDisplay()
+    {
+        _highScoreDisplay.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
+
+    }
+    
 }
