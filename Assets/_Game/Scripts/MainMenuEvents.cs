@@ -159,8 +159,8 @@ public class MainMenuEvent : MonoBehaviour
 
     private void OnHighScoreResetButtonClick(ClickEvent evt)
     {
-      
-
+        PlayerPrefs.DeleteAll();
+        _highScoreDisplay.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", getScore.score)}";
         _rootMenu.style.display = DisplayStyle.None;
         _highScoreMenu.style.display = DisplayStyle.Flex;
     }
@@ -180,7 +180,6 @@ public class MainMenuEvent : MonoBehaviour
     private void OnQuitButtonClick(ClickEvent evt)
     {
         Debug.Log("Quit Button Click");
-
         Application.Quit();
     }
 

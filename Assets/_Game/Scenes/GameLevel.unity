@@ -969,6 +969,7 @@ MonoBehaviour:
   _jump: 10
   _obstacleSpawnInterval: 10
   _obstacleSpeed: 5
+  score: 0
   _pickupSpawnInterval: 20
   _pickupSpeed: 5
   _song02: {fileID: 8300000, guid: 615686b34dca9ee438f03914144fc902, type: 3}
@@ -1307,7 +1308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -231, y: -3}
+  m_AnchoredPosition: {x: 113, y: -65}
   m_SizeDelta: {x: 160, y: 200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1646755930
@@ -1386,7 +1387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 284, y: 1112}
+  m_AnchoredPosition: {x: 822, y: 445}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1699681419
